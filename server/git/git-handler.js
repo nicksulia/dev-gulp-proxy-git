@@ -37,7 +37,7 @@ gulp.task('up-version', function () {
 
 gulp.task('commit', function() {
     var message;
-    gulp.src('./*', {buffer:false})
+    gulp.src('./*', {buffer: false})
         .pipe(prompt.prompt({
             type: 'input',
             name: 'commit',
