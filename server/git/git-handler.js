@@ -44,9 +44,10 @@ gulp.task('commit', function() {
             message: 'Please enter commit message...'
         }, function (res) {
             message = res.commit;
+            console.log()
         }))
         .pipe(gitignore())
-        .pipe(git.commit(`${message}`));
+        .pipe(git.commit(''+message));
 });
 
 gulp.task('initial-commit', function() {
