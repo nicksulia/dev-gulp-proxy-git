@@ -1,0 +1,19 @@
+{
+  "name":"proxy-simple",
+  "version":"1.0.4",
+  "description":"```shell node ../../bin/webpack-dev-server.js --open ```",
+  "main":"app.js",
+  "scripts":{
+    "test":"echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies":{
+    "gulp":"*",
+    "require-dir":"*",
+    "webpack":"*",
+    "webpack-dev-server":"*",
+    "gulp-git":"*",
+    "gulp-prompt":"*"
+  },
+  "author":"",
+  "license":"ISC"
+}
