@@ -69,4 +69,3 @@ gulp.task('tag', function() {
     });
 });
 
-gulp.task('git',['up-version','add','commit','tag','push']);

@@ -1,11 +1,11 @@
 
 {
   "name":"proxy-simple",
-  "version":"1.0.7",
+  "version":"1.0.8",
   "description":"```shell node ../../bin/webpack-dev-server.js --open ```",
   "main":"app.js",
   "scripts":{
-    "git":"gulp up-version && gulp add && gulp commit && gulp tag && gulp push'"
+    "git":"gulp up-version && gulp add && gulp commit && gulp tag && gulp push"
   },
   "dependencies":{
     "gulp":"*",
