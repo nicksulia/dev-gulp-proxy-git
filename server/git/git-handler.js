@@ -60,7 +60,6 @@ gulp.task('push', function() {
 });
 
 // Tag the repo
-
 gulp.task('tag', function() {
     git.tag(pack.version, `minor ${pack.version}`, function (err) {
         if (err) {

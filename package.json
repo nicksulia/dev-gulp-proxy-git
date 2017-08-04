@@ -1,7 +1,7 @@
 
 {
   "name":"proxy-simple",
-  "version":"1.0.8",
+  "version":"1.0.9",
   "description":"```shell node ../../bin/webpack-dev-server.js --open ```",
   "main":"app.js",
   "scripts":{
