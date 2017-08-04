@@ -36,7 +36,7 @@ gulp.task('up-version', function () {
 // Commit files
 
 gulp.task('commit', function() {
-    var message;
+    var message = "my commit";
     gulp.src('./*', {buffer: false})
         .pipe(prompt.prompt({
             type: 'input',
@@ -44,10 +44,10 @@ gulp.task('commit', function() {
             message: 'Please enter commit message...'
         }, function (res) {
             message = res.commit;
-            console.log()
         }))
         .pipe(gitignore())
-        .pipe(git.commit(''+message));
+        .pipe(git.commit(message));
+
 });
 
 gulp.task('initial-commit', function() {
