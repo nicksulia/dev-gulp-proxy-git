@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var git = require('gulp-git');
 var prompt = require('gulp-prompt');
 var gitignore = require('gulp-gitignore');
+var pack = require('../../package.json');
 
 gulp.task('add', function() {
     gulp.src('./')
@@ -36,27 +37,20 @@ gulp.task('up-version', function () {
 // Commit files
 
 gulp.task('commit', function() {
-    var message = "my commit";
-    gulp.src('./*', {buffer: false})
+    //just source anything
+    gulp.src('package.json')
         .pipe(prompt.prompt({
             type: 'input',
             name: 'commit',
             message: 'Please enter commit message...'
         }, function (res) {
-            message = res.commit;
-        }))
-        .pipe(gitignore())
-        .pipe(git.commit(message));
-
+            return gulp.src("./*",{buffer:false})
+                .pipe(gitignore())
+                .pipe(git.commit(res.commit));
+        }));
 });
 
-gulp.task('initial-commit', function() {
-    var message;
-    gulp.src('./*', {buffer:false})
-        .pipe(gitignore())
-        .pipe(git.commit("Initial commit"));
-});
-
+//push all changes
 gulp.task('push', function() {
     git.push('origin', 'master',{args:" --tags"}, function (err) {
         if (err) {
@@ -64,7 +58,6 @@ gulp.task('push', function() {
         }
     });
 });
-
 
 // Tag the repo
 
@@ -75,3 +68,5 @@ gulp.task('tag', function() {
         }
     });
 });
+
+gulp.task('git',['up-version','add','commit','tag','push']);
