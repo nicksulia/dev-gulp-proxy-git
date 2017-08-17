@@ -1,7 +1,7 @@
 
 {
   "name":"proxy-simple",
-  "version":"1.0.9",
+  "version":"1.0.10",
   "description":"```shell node ../../bin/webpack-dev-server.js --open ```",
   "main":"app.js",
   "scripts":{
@@ -13,7 +13,8 @@
     "webpack":"*",
     "webpack-dev-server":"*",
     "gulp-git":"*",
-    "gulp-prompt":"*"
+    "gulp-prompt":"*",
+    "gulp-gitignore":"*"
   },
   "author":"",
   "license":"ISC"

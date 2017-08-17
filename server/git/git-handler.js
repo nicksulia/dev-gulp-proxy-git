@@ -1,4 +1,3 @@
-
 var fs = require('fs');
 var gulp = require('gulp');
 var git = require('gulp-git');
